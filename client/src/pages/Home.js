@@ -74,7 +74,7 @@ export default function Home() {
           <motion.div variants={fadeUp} initial="hidden" animate="visible" custom={1}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-50 border border-indigo-200 text-sm text-indigo-600 font-medium mb-6"
           >
-            <span className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-green-700 animate-pulse" />
             Crafting the future of digital — since 2021
           </motion.div>
 

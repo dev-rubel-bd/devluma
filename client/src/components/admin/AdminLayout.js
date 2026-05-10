@@ -102,7 +102,7 @@ export default function AdminLayout({ children, title }) {
             <h1 className="font-display font-semibold text-white text-lg">{title}</h1>
           </div>
         </header>
-        <main className="p-5 md:p-8">{children}</main>
+        <main className="p-5 md:p-8 max-w-7xl mx-auto">{children}</main>
       </div>
     </div>
   );
