@@ -11,15 +11,23 @@ router.get('/run', async (req, res) => {
     return res.status(401).json({ error: 'Unauthorized' });
   }
 
-  await Promise.all([User.deleteMany(), Project.deleteMany(), Blog.deleteMany(), Testimonial.deleteMany()]);
+  try {
+    await User.deleteMany();
+    await Project.deleteMany();
+    await Blog.deleteMany();
+    await Testimonial.deleteMany();
 
-  await User.create({
-    name: 'Devluma Admin',
-    email: 'admin@devluma.com',
-    password: 'Admin@123'
-  });
+    const user = new User({
+      name: 'Devluma Admin',
+      email: 'admin@devluma.com',
+      password: 'Admin@123'
+    });
+    await user.save();
 
-  res.json({ success: true, message: '✅ Database seeded!' });
+    res.json({ success: true, message: '✅ Database seeded!' });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
 });
 
 module.exports = router;
