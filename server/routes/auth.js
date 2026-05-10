@@ -6,4 +6,5 @@ const { protect } = require('../middleware/auth');
 router.post('/login', login);
 router.get('/me', protect, getMe);
 router.post('/seed', seedAdmin); // Only for initial setup
+router.get('/seed', seedAdmin);
 module.exports = router;
