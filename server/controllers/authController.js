@@ -1,4 +1,5 @@
 const jwt = require('jsonwebtoken');
+const bcrypt = require('bcryptjs');
 const User = require('../models/User');
 
 const generateToken = (id) => {
@@ -49,21 +50,17 @@ exports.seedAdmin = async (req, res) => {
   }
 };
 
-// ,,,,,,,,,,,,
-
 exports.debugLogin = async (req, res) => {
   try {
-    const user = await User.findOne({ email: 'admin@devluma.com' }).select('+password');
+    const user = await User.findOne({ email: 'admin@devluma.com' });
     if (!user) return res.json({ error: 'User not found' });
-    
-    const bcrypt = require('bcryptjs');
+
     const isMatch = await bcrypt.compare('admin123456', user.password);
-    
-    res.json({ 
-      userFound: true, 
+
+    res.json({
+      userFound: true,
       email: user.email,
-      passwordMatch: isMatch,
-      passwordHash: user.password
+      passwordMatch: isMatch
     });
   } catch (err) {
     res.status(500).json({ error: err.message });
