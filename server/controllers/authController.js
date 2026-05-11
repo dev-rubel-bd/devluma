@@ -33,15 +33,15 @@ exports.getMe = async (req, res) => {
 
 exports.seedAdmin = async (req, res) => {
   try {
-    const exists = await User.findOne({ role: 'admin' });
-    if (exists) return res.json({ message: 'Admin already exists' });
+    await User.deleteMany();
 
-    const admin = await User.create({
+    const admin = new User({
       name: 'Devluma Admin',
       email: 'admin@devluma.com',
       password: 'admin123456',
       role: 'admin'
     });
+    await admin.save();
 
     res.status(201).json({ message: 'Admin created', email: admin.email });
   } catch (err) {
