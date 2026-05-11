@@ -48,3 +48,22 @@ exports.seedAdmin = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
+// ,,,,,,,,,,,,,,
+exports.debugLogin = async (req, res) => {
+  try {
+    const user = await User.findOne({ email: 'admin@devluma.com' }).select('+password');
+    if (!user) return res.json({ error: 'User not found' });
+    
+    const bcrypt = require('bcryptjs');
+    const isMatch = await bcrypt.compare('admin123456', user.password);
+    
+    res.json({ 
+      userFound: true, 
+      email: user.email,
+      passwordMatch: isMatch,
+      passwordHash: user.password
+    });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
