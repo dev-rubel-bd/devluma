@@ -39,7 +39,7 @@ function Sidebar({ open, setOpen }) {
           {nav.map(({ href, label, icon: Icon }) => (
             <Link key={href} to={href} onClick={() => setOpen(false)}
               className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all ${
-                location.pathname === href ? "bg-brand-500/15 text-brand-400 border border-brand-500/20" : "text-slate-400 hover:text-white hover:bg-white/5"
+                location.pathname === href ? "bg-brand-500/15 text-brand-400 border border-brand-500/20" : "text-slate-700 hover:text-white hover:bg-white/5"
               }`}
             >
               <Icon className="w-4 h-4" />{label}
@@ -229,7 +229,7 @@ function BlogsAdmin() {
           {blogs.map(b => (
             <div key={b._id} className="glass rounded-xl p-4 flex items-center gap-4">
               <div className="flex-1 min-w-0">
-                <div className="text-white font-medium truncate">{b.title}</div>
+                <div className="text-black font-medium truncate">{b.title}</div>
                 <div className="text-slate-500 text-xs">{b.author} · {b.published ? "Published" : "Draft"}</div>
               </div>
               <div className="flex gap-2">
@@ -244,15 +244,15 @@ function BlogsAdmin() {
       {modal && (
         <Modal title={modal === "create" ? "New Post" : "Edit Post"} onClose={() => setModal(null)}>
           <div className="space-y-4">
-            <div><label className="block text-sm text-slate-300 mb-1">Title</label><input value={form.title} onChange={e => setForm(p => ({ ...p, title: e.target.value }))} className="input-field" /></div>
-            <div><label className="block text-sm text-slate-300 mb-1">Excerpt</label><textarea rows={2} value={form.excerpt} onChange={e => setForm(p => ({ ...p, excerpt: e.target.value }))} className="input-field resize-none" /></div>
-            <div><label className="block text-sm text-slate-300 mb-1">Content</label><textarea rows={6} value={form.content} onChange={e => setForm(p => ({ ...p, content: e.target.value }))} className="input-field resize-none" /></div>
-            <div><label className="block text-sm text-slate-300 mb-1">Author</label><input value={form.author} onChange={e => setForm(p => ({ ...p, author: e.target.value }))} className="input-field" /></div>
-            <div><label className="block text-sm text-slate-300 mb-1">Image URL</label><input value={form.image} onChange={e => setForm(p => ({ ...p, image: e.target.value }))} className="input-field" /></div>
-            <div><label className="block text-sm text-slate-300 mb-1">Tags</label><input value={form.tags} onChange={e => setForm(p => ({ ...p, tags: e.target.value }))} placeholder="React, Design, SEO" className="input-field" /></div>
+            <div><label className="block text-sm text-slate-600 mb-1">Title</label><input value={form.title} onChange={e => setForm(p => ({ ...p, title: e.target.value }))} className="input-field" /></div>
+            <div><label className="block text-sm text-slate-600 mb-1">Excerpt</label><textarea rows={2} value={form.excerpt} onChange={e => setForm(p => ({ ...p, excerpt: e.target.value }))} className="input-field resize-none" /></div>
+            <div><label className="block text-sm text-slate-600 mb-1">Content</label><textarea rows={6} value={form.content} onChange={e => setForm(p => ({ ...p, content: e.target.value }))} className="input-field resize-none" /></div>
+            <div><label className="block text-sm text-slate-600 mb-1">Author</label><input value={form.author} onChange={e => setForm(p => ({ ...p, author: e.target.value }))} className="input-field" /></div>
+            <div><label className="block text-sm text-slate-600 mb-1">Image URL</label><input value={form.image} onChange={e => setForm(p => ({ ...p, image: e.target.value }))} className="input-field" /></div>
+            <div><label className="block text-sm text-slate-600 mb-1">Tags</label><input value={form.tags} onChange={e => setForm(p => ({ ...p, tags: e.target.value }))} placeholder="React, Design, SEO" className="input-field" /></div>
             <label className="flex items-center gap-2 cursor-pointer">
               <input type="checkbox" checked={form.published} onChange={e => setForm(p => ({ ...p, published: e.target.checked }))} className="w-4 h-4 accent-brand-500" />
-              <span className="text-sm text-slate-300">Published</span>
+              <span className="text-sm text-slate-600">Published</span>
             </label>
             <div className="flex gap-3 pt-2">
               <button onClick={save} className="btn-primary flex-1 flex items-center justify-center gap-2"><Check className="w-4 h-4" />Save</button>
@@ -311,13 +311,13 @@ function TestimonialsAdmin() {
       {modal && (
         <Modal title={modal === "create" ? "Add Testimonial" : "Edit Testimonial"} onClose={() => setModal(null)}>
           <div className="space-y-4">
-            <div><label className="block text-sm text-slate-300 mb-1">Name</label><input value={form.name} onChange={e => setForm(p => ({ ...p, name: e.target.value }))} className="input-field" /></div>
+            <div><label className="block text-sm text-slate-600 mb-1">Name</label><input value={form.name} onChange={e => setForm(p => ({ ...p, name: e.target.value }))} className="input-field" /></div>
             <div className="grid grid-cols-2 gap-3">
-              <div><label className="block text-sm text-slate-300 mb-1">Role</label><input value={form.role} onChange={e => setForm(p => ({ ...p, role: e.target.value }))} className="input-field" /></div>
-              <div><label className="block text-sm text-slate-300 mb-1">Company</label><input value={form.company} onChange={e => setForm(p => ({ ...p, company: e.target.value }))} className="input-field" /></div>
+              <div><label className="block text-sm text-slate-600 mb-1">Role</label><input value={form.role} onChange={e => setForm(p => ({ ...p, role: e.target.value }))} className="input-field" /></div>
+              <div><label className="block text-sm text-slate-600 mb-1">Company</label><input value={form.company} onChange={e => setForm(p => ({ ...p, company: e.target.value }))} className="input-field" /></div>
             </div>
-            <div><label className="block text-sm text-slate-300 mb-1">Review</label><textarea rows={4} value={form.review} onChange={e => setForm(p => ({ ...p, review: e.target.value }))} className="input-field resize-none" /></div>
-            <div><label className="block text-sm text-slate-300 mb-1">Rating (1-5)</label><input type="number" min={1} max={5} value={form.rating} onChange={e => setForm(p => ({ ...p, rating: Number(e.target.value) }))} className="input-field" /></div>
+            <div><label className="block text-sm text-slate-600 mb-1">Review</label><textarea rows={4} value={form.review} onChange={e => setForm(p => ({ ...p, review: e.target.value }))} className="input-field resize-none" /></div>
+            <div><label className="block text-sm text-slate-600 mb-1">Rating (1-5)</label><input type="number" min={1} max={5} value={form.rating} onChange={e => setForm(p => ({ ...p, rating: Number(e.target.value) }))} className="input-field" /></div>
             <div className="flex gap-3 pt-2">
               <button onClick={save} className="btn-primary flex-1 flex items-center justify-center gap-2"><Check className="w-4 h-4" />Save</button>
               <button onClick={() => setModal(null)} className="btn-ghost flex-1">Cancel</button>

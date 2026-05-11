@@ -54,8 +54,8 @@ export function EmptyState({ icon: Icon, title, description }) {
         style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}>
         {Icon && <Icon size={28} />}
       </div>
-      <h3 className="text-white font-semibold mb-2">{title}</h3>
-      <p className="text-slate-500 text-sm max-w-xs">{description}</p>
+      <h3 className="text-black font-semibold mb-2">{title}</h3>
+      <p className="text-black text-sm max-w-xs">{description}</p>
     </div>
   );
 }
@@ -104,7 +104,7 @@ export function Modal({ isOpen, onClose, title, children }) {
         <div className="flex items-center justify-between p-6 border-b" style={{ borderColor: 'var(--border-color)' }}>
           <h3 className="font-display font-bold text-xl text-white">{title}</h3>
           <button onClick={onClose}
-            className="w-8 h-8 rounded-lg flex items-center justify-center text-slate-400 hover:text-white hover:bg-white/5 transition-colors">
+            className="w-8 h-8 rounded-lg flex items-center justify-center text-black hover:text-blue-600 hover:bg-white/5 transition-colors">
             ✕
           </button>
         </div>

@@ -73,17 +73,17 @@ export default function AdminProjects() {
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 flex-wrap">
-                  <span className="font-medium text-white truncate">{item.title}</span>
+                  <span className="font-medium text-black truncate">{item.title}</span>
                   <span className="text-xs px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-400">{item.category}</span>
-                  {item.featured && <span className="text-xs px-2 py-0.5 rounded-full bg-yellow-500/20 text-yellow-400">Featured</span>}
+                  {item.featured && <span className="text-xs px-2 py-0.5 rounded-full bg-lime-100/30 text-lime-600">Featured</span>}
                 </div>
-                <p className="text-slate-500 text-xs truncate mt-0.5">{item.description}</p>
+                <p className="text-slate-600 text-xs truncate mt-0.5">{item.description}</p>
               </div>
               <div className="flex gap-2 shrink-0">
-                <button onClick={() => openEdit(item)} className="p-2 text-slate-500 hover:text-white hover:bg-white/5 rounded-lg transition-colors">
+                <button onClick={() => openEdit(item)} className="p-2 text-slate-700 hover:text-yellow-500 hover:bg-white/5 rounded-lg transition-colors">
                   <FiEdit2 size={15} />
                 </button>
-                <button onClick={() => remove(item._id)} className="p-2 text-slate-500 hover:text-red-400 hover:bg-red-500/5 rounded-lg transition-colors">
+                <button onClick={() => remove(item._id)} className="p-2 text-slate-700 hover:text-red-400 hover:bg-red-500/5 rounded-lg transition-colors">
                   <FiTrash2 size={15} />
                 </button>
               </div>
@@ -99,38 +99,38 @@ export default function AdminProjects() {
             className="glass-card w-full max-w-lg max-h-[90vh] overflow-y-auto"
           >
             <div className="flex items-center justify-between p-5 border-b border-white/5">
-              <h2 className="font-display font-semibold text-white">{editing ? 'Edit Project' : 'New Project'}</h2>
-              <button onClick={() => setModal(false)} className="p-1.5 text-slate-500 hover:text-white"><FiX size={18} /></button>
+              <h2 className="font-display font-semibold text-black">{editing ? 'Edit Project' : 'New Project'}</h2>
+              <button onClick={() => setModal(false)} className="p-1.5 text-slate-700 hover:text-red-600"><FiX size={18} /></button>
             </div>
             <form onSubmit={save} className="p-5 space-y-4">
               {[['title', 'Title *'], ['image', 'Image URL'], ['liveUrl', 'Live URL'], ['githubUrl', 'GitHub URL']].map(([name, label]) => (
                 <div key={name}>
-                  <label className="text-slate-400 text-xs mb-1.5 block">{label}</label>
+                  <label className="text-slate-700 text-xs mb-1.5 block">{label}</label>
                   <input name={name} value={form[name]} onChange={handle} required={name === 'title'}
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-3 py-2.5 text-white text-sm focus:outline-none focus:border-purple-500/60 transition-colors" />
+                    className="w-full bg-white/5 border border-white/50 rounded-xl px-3 py-2.5 text-black text-sm focus:outline-none focus:border-purple-500/60 transition-colors" />
                 </div>
               ))}
               <div>
-                <label className="text-slate-400 text-xs mb-1.5 block">Category</label>
+                <label className="text-slate-700 text-xs mb-1.5 block">Category</label>
                 <select name="category" value={form.category} onChange={handle}
-                  className="w-full bg-dark-800 border border-white/10 rounded-xl px-3 py-2.5 text-white text-sm focus:outline-none focus:border-purple-500/60"
+                  className="w-full bg-dark-800 border border-white/5 rounded-xl px-3 py-2.5 text-white text-sm focus:outline-none focus:border-purple-500/60"
                 >
                   {['Web', 'App', 'Marketing', 'SEO'].map(c => <option key={c}>{c}</option>)}
                 </select>
               </div>
               <div>
-                <label className="text-slate-400 text-xs mb-1.5 block">Description *</label>
+                <label className="text-slate-700 text-xs mb-1.5 block">Description *</label>
                 <textarea name="description" value={form.description} onChange={handle} required rows={3}
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-3 py-2.5 text-white text-sm focus:outline-none focus:border-purple-500/60 resize-none" />
+                  className="w-full bg-white/5 border border-white/85 rounded-xl px-3 py-2.5 text-black text-sm focus:outline-none focus:border-purple-500/60 resize-none" />
               </div>
               <div>
-                <label className="text-slate-400 text-xs mb-1.5 block">Technologies (comma-separated)</label>
+                <label className="text-slate-700 text-xs mb-1.5 block">Technologies (comma-separated)</label>
                 <input name="technologies" value={form.technologies} onChange={handle} placeholder="React, Node.js, MongoDB"
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-3 py-2.5 text-white text-sm focus:outline-none focus:border-purple-500/60" />
+                  className="w-full bg-white/5 border border-white/40 rounded-xl px-3 py-2.5 text-black text-sm focus:outline-none focus:border-purple-500/60" />
               </div>
               <label className="flex items-center gap-2 cursor-pointer">
                 <input type="checkbox" name="featured" checked={form.featured} onChange={handle} className="accent-purple-500 w-4 h-4" />
-                <span className="text-slate-400 text-sm">Featured project</span>
+                <span className="text-slate-700 text-sm">Featured project</span>
               </label>
               <div className="flex gap-3 pt-2">
                 <button type="button" onClick={() => setModal(false)} className="btn-outline flex-1 text-sm py-2.5">Cancel</button>

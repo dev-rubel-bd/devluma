@@ -56,7 +56,7 @@ export default function AdminMessages() {
                   <div className={`w-2 h-2 rounded-full mt-2 shrink-0 ${!item.read ? 'bg-blue-400' : 'bg-transparent'}`} />
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center justify-between gap-2">
-                      <span className={`font-medium text-sm ${!item.read ? 'text-white' : 'text-slate-300'}`}>{item.name}</span>
+                      <span className={`font-medium text-sm ${!item.read ? 'text-sky-700' : 'text-slate-600'}`}>{item.name}</span>
                       <span className="text-slate-600 text-xs shrink-0">{new Date(item.createdAt).toLocaleDateString()}</span>
                     </div>
                     <p className="text-slate-500 text-xs mt-0.5 truncate">{item.subject || item.message}</p>
@@ -73,7 +73,7 @@ export default function AdminMessages() {
             <motion.div key={selected._id} initial={{ opacity: 0, x: 10 }} animate={{ opacity: 1, x: 0 }} className="glass-card p-6 sticky top-24">
               <div className="flex items-start justify-between mb-4">
                 <div>
-                  <h3 className="font-display font-semibold text-white">{selected.name}</h3>
+                  <h3 className="font-display font-semibold text-sky-700">{selected.name}</h3>
                   <a href={`mailto:${selected.email}`} className="text-blue-400 text-sm hover:underline flex items-center gap-1 mt-1">
                     <FiMail size={12} /> {selected.email}
                   </a>
@@ -89,9 +89,9 @@ export default function AdminMessages() {
                   </button>
                 </div>
               </div>
-              {selected.subject && <p className="text-slate-400 text-sm font-medium mb-3">{selected.subject}</p>}
-              <p className="text-slate-300 text-sm leading-relaxed whitespace-pre-wrap">{selected.message}</p>
-              <p className="text-slate-600 text-xs mt-4">{new Date(selected.createdAt).toLocaleString()}</p>
+              {selected.subject && <p className="text-slate-600 text-sm font-medium mb-3">{selected.subject}</p>}
+              <p className="text-slate-700 text-sm leading-relaxed whitespace-pre-wrap">{selected.message}</p>
+              <p className="text-slate-500 text-xs mt-4">{new Date(selected.createdAt).toLocaleString()}</p>
             </motion.div>
           ) : (
             <div className="glass-card p-10 flex flex-col items-center justify-center text-center min-h-48 text-slate-600">

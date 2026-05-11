@@ -40,7 +40,7 @@ export default function Dashboard() {
     <AdminLayout title="Dashboard">
       <motion.div variants={fadeUp} initial="hidden" animate="visible" className="mb-8">
         <h2 className="text-2xl font-display font-bold text-white">Welcome back 👋</h2>
-        <p className="text-slate-500 mt-1">Here's an overview of your Devluma content.</p>
+        <p className="text-white mt-1">Here's an overview of your Devluma content.</p>
       </motion.div>
 
       {/* Stat Cards */}
@@ -59,9 +59,9 @@ export default function Dashboard() {
               {loading ? (
                 <div className="h-8 w-16 bg-white/10 rounded animate-pulse mb-1" />
               ) : (
-                <div className="text-3xl font-display font-bold text-white">{value}</div>
+                <div className="text-3xl font-display font-bold text-black">{value}</div>
               )}
-              <div className="text-slate-500 text-sm mt-0.5 flex items-center gap-1 group-hover:text-white transition-colors">
+              <div className="text-black text-sm mt-0.5 flex items-center gap-1 group-hover:text-blue-600 transition-colors">
                 {label} <FiArrowRight size={12} />
               </div>
             </Link>
@@ -81,7 +81,7 @@ export default function Dashboard() {
             { to: '/admin/testimonials', label: 'Add Testimonial', icon: FiStar },
           ].map(({ to, label, icon: Icon }) => (
             <Link key={to} to={to}
-              className="glass-card p-4 flex items-center gap-3 hover:border-purple-500/30 transition-colors group text-slate-400 hover:text-white"
+              className="glass-card p-4 flex items-center gap-3 hover:border-purple-500/30 transition-colors group text-black hover:text-blue-600"
             >
               <Icon size={18} />
               <span className="text-sm font-medium">{label}</span>

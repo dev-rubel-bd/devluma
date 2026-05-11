@@ -66,17 +66,17 @@ export default function AdminTestimonials() {
             <motion.div key={item._id} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: i*0.04 }}
               className="glass-card p-4 flex items-start gap-4"
             >
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-yellow-500/30 to-orange-500/30 flex items-center justify-center text-white font-bold shrink-0">
+              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-green-500/30 to-orange-500/30 flex items-center justify-center text-white font-bold shrink-0">
                 {item.name[0]}
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 flex-wrap">
-                  <span className="font-medium text-white">{item.name}</span>
-                  <span className="text-slate-500 text-xs">{item.role}{item.company ? ` · ${item.company}` : ''}</span>
-                  {item.featured && <span className="text-xs px-2 py-0.5 rounded-full bg-yellow-500/20 text-yellow-400">Featured</span>}
+                  <span className="font-medium text-black">{item.name}</span>
+                  <span className="text-slate-600 text-xs">{item.role}{item.company ? ` · ${item.company}` : ''}</span>
+                  {item.featured && <span className="text-xs px-2 py-0.5 rounded-full bg-yellow-500/20 text-yellow-600">Featured</span>}
                 </div>
                 <div className="flex gap-0.5 my-1">
-                  {[...Array(item.rating || 5)].map((_, j) => <FiStar key={j} size={11} className="text-yellow-400 fill-yellow-400" />)}
+                  {[...Array(item.rating || 5)].map((_, j) => <FiStar key={j} size={11} className="text-yellow-500 fill-yellow-400" />)}
                 </div>
                 <p className="text-slate-500 text-xs truncate">"{item.review}"</p>
               </div>
@@ -93,24 +93,24 @@ export default function AdminTestimonials() {
         <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4">
           <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="glass-card w-full max-w-md max-h-[90vh] overflow-y-auto">
             <div className="flex items-center justify-between p-5 border-b border-white/5">
-              <h2 className="font-display font-semibold text-white">{editing ? 'Edit Testimonial' : 'New Testimonial'}</h2>
-              <button onClick={() => setModal(false)} className="p-1.5 text-slate-500 hover:text-white"><FiX size={18} /></button>
+              <h2 className="font-display font-semibold text-black">{editing ? 'Edit Testimonial' : 'New Testimonial'}</h2>
+              <button onClick={() => setModal(false)} className="p-1.5 text-slate-700 hover:text-red-600"><FiX size={18} /></button>
             </div>
             <form onSubmit={save} className="p-5 space-y-4">
               {[['name','Name *'],['role','Role/Title'],['company','Company'],['avatar','Avatar URL']].map(([name,label]) => (
                 <div key={name}>
-                  <label className="text-slate-400 text-xs mb-1.5 block">{label}</label>
+                  <label className="text-slate-700 text-xs mb-1.5 block">{label}</label>
                   <input name={name} value={form[name]} onChange={handle} required={name === 'name'}
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-3 py-2.5 text-white text-sm focus:outline-none focus:border-purple-500/60" />
+                    className="w-full bg-white/5 border border-white/40 rounded-xl px-3 py-2.5 text-white text-sm focus:outline-none focus:border-purple-500/60" />
                 </div>
               ))}
               <div>
-                <label className="text-slate-400 text-xs mb-1.5 block">Review *</label>
+                <label className="text-slate-700 text-xs mb-1.5 block">Review *</label>
                 <textarea name="review" value={form.review} onChange={handle} required rows={3}
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-3 py-2.5 text-white text-sm focus:outline-none focus:border-purple-500/60 resize-none" />
+                  className="w-full bg-white/5 border border-white/40 rounded-xl px-3 py-2.5 text-white text-sm focus:outline-none focus:border-purple-500/60 resize-none" />
               </div>
               <div>
-                <label className="text-slate-400 text-xs mb-1.5 block">Rating</label>
+                <label className="text-slate-700 text-xs mb-1.5 block">Rating</label>
                 <select name="rating" value={form.rating} onChange={handle}
                   className="w-full bg-dark-800 border border-white/10 rounded-xl px-3 py-2.5 text-white text-sm focus:outline-none">
                   {[5,4,3,2,1].map(r => <option key={r} value={r}>{r} ⭐</option>)}
@@ -118,7 +118,7 @@ export default function AdminTestimonials() {
               </div>
               <label className="flex items-center gap-2 cursor-pointer">
                 <input type="checkbox" name="featured" checked={form.featured} onChange={handle} className="accent-purple-500 w-4 h-4" />
-                <span className="text-slate-400 text-sm">Feature on homepage</span>
+                <span className="text-slate-700 text-sm">Feature on homepage</span>
               </label>
               <div className="flex gap-3 pt-2">
                 <button type="button" onClick={() => setModal(false)} className="btn-outline flex-1 text-sm py-2.5">Cancel</button>
