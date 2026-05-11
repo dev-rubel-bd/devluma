@@ -3,11 +3,11 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
-      fontFamily: {
-        display: ['"Syne"', 'sans-serif'],
-        body:    ['"DM Sans"', 'sans-serif'],
-        mono:    ['"JetBrains Mono"', 'monospace'],
-      },
+       ffontFamily: {
+  display: ['"Plus Jakarta Sans"', 'sans-serif'],
+  body:    ['"Plus Jakarta Sans"', 'sans-serif'],
+  mono:    ['"JetBrains Mono"', 'monospace'],
+},
       colors: {
         dark: {
           950: '#03030f',
