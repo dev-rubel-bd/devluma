@@ -48,7 +48,9 @@ exports.seedAdmin = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
-// ,,,,,,,,,,,,,,
+
+// ,,,,,,,,,,,,
+
 exports.debugLogin = async (req, res) => {
   try {
     const user = await User.findOne({ email: 'admin@devluma.com' }).select('+password');
