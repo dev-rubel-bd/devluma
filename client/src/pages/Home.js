@@ -59,7 +59,7 @@ function StatCard({ value, suffix, label }) {
   }, []);
   return (
     <motion.div ref={ref} whileHover={{ scale: 1.05 }}
-      className="bg-white border border-indigo-100 rounded-2xl p-4 text-center shadow-sm shadow-indigo-50"
+      className="bg-white border border-indigo-100 rounded-2xl p-4  text-center shadow-sm shadow-indigo-50"
     >
       <div className="gradient-text font-display font-bold text-3xl">{count}{suffix}</div>
       <div className="text-gray-400 text-xs mt-1">{label}</div>
@@ -231,7 +231,7 @@ export default function Home() {
 
           {/* Stats */}
           <motion.div variants={fadeUp} initial="hidden" animate="visible" custom={6}
-            className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto mt-20"
+            className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-3xl mx-auto mt-10 md:mt-20 px-5 sm:px-8 md:px-0"
           >
             {stats.map(({ value, suffix, label }, i) => (
   <StatCard key={i} value={value} suffix={suffix} label={label} />
