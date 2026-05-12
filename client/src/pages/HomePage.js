@@ -90,7 +90,7 @@ function HeroSection() {
             >
               <div className="flex -space-x-2">
                 {['bg-blue-500', 'bg-purple-500', 'bg-pink-500', 'bg-emerald-500'].map((c, i) => (
-                  <div key={i} className={`w-9 h-9 rounded-full ${c} flex items-center justify-center text-white text-xs font-bold border-2 border-dark-900`}>
+                  <div key={i} className={`w-9 h-9 rounded-full ${c} flex items-center justify-center text-white text-xs font-semibold border-2 border-dark-900`}>
                     {['A','B','C','D'][i]}
                   </div>
                 ))}
@@ -220,7 +220,7 @@ function ServicesSection() {
                   <Icon size={24} className="text-blue-400 group-hover:scale-110 transition-transform" />
                 </div>
               </div>
-              <h3 className="font-display font-bold text-white text-lg mb-3 group-hover:text-blue-300 transition-colors">{title}</h3>
+              <h3 className="font-display font-semibold text-white text-lg mb-3 group-hover:text-blue-300 transition-colors">{title}</h3>
               <p className="text-slate-400 text-sm leading-relaxed mb-4">{desc}</p>
               <span className="font-mono text-xs text-slate-600">{tag}</span>
             </motion.div>
@@ -276,7 +276,7 @@ function PortfolioPreview() {
                   </div>
                 </div>
                 <div className="p-6">
-                  <h3 className="font-display font-bold text-white text-lg mb-2 group-hover:text-blue-300 transition-colors">{project.title}</h3>
+                  <h3 className="font-display font-semibold text-white text-lg mb-2 group-hover:text-blue-300 transition-colors">{project.title}</h3>
                   <p className="text-slate-400 text-sm leading-relaxed mb-4 line-clamp-2">{project.description}</p>
                   <div className="flex flex-wrap gap-2">
                     {project.tags?.slice(0, 3).map(tag => (
@@ -329,7 +329,7 @@ function TestimonialsSection() {
                 </div>
                 <p className="text-slate-300 text-sm leading-relaxed mb-6 italic">"{t.review}"</p>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full flex items-center justify-center font-bold text-white text-sm"
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center font-semibold text-white text-sm"
                     style={{ background: 'linear-gradient(135deg, #3b82f6, #7c3aed)' }}>
                     {t.name[0]}
                   </div>

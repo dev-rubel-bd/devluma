@@ -66,7 +66,7 @@ export default function AdminTestimonials() {
             <motion.div key={item._id} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: i*0.04 }}
               className="glass-card p-4 flex items-start gap-4"
             >
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-green-500/30 to-orange-500/30 flex items-center justify-center text-white font-bold shrink-0">
+              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-green-500/30 to-orange-500/30 flex items-center justify-center text-white font-semibold shrink-0">
                 {item.name[0]}
               </div>
               <div className="flex-1 min-w-0">

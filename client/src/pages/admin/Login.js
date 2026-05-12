@@ -41,7 +41,7 @@ export default function Login() {
               <img src="/logo.png" alt="Devluma" className="w-full h-full object-cover" />
             </div>
           </div>
-          <h1 className="font-display font-bold text-2xl text-gray-900">Admin Portal</h1>
+          <h1 className="font-display font-semibold text-2xl text-gray-900">Admin Portal</h1>
           <p className="text-gray-500 text-sm mt-1">Sign in to manage <span className="text-indigo-600 font-medium">Devluma</span></p>
         </div>
 

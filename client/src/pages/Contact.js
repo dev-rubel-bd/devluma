@@ -76,7 +76,7 @@ export default function Contact() {
                 <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: 'spring', stiffness: 200 }}>
                   <FiCheckCircle size={56} className="text-green-400 mx-auto mb-4" />
                 </motion.div>
-                <h3 className="font-display font-bold text-black text-2xl mb-2">Message Sent!</h3>
+                <h3 className="font-display font-semibold text-black text-2xl mb-2">Message Sent!</h3>
                 <p className="text-slate-400 mb-6">We'll get back to you within 24 hours.</p>
                 <button onClick={() => setSent(false)} className="btn-outline text-sm">Send Another</button>
               </div>

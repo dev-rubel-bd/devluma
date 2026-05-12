@@ -27,8 +27,8 @@ export default function AdminLayout({ children, title }) {
   const Sidebar = () => (
     <div className="flex flex-col h-full">
       <div className="p-5 border-b border-white/5 flex items-center gap-2">
-        <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white font-bold text-xs">D</div>
-        <span className="font-display font-bold text-white">dev<span className="gradient-text">luma</span></span>
+        <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white font-semibold text-xs">D</div>
+        <span className="font-display font-semibold text-white">dev<span className="gradient-text">luma</span></span>
         <span className="text-xs text-slate-600 ml-1">admin</span>
       </div>
       <nav className="flex-1 p-4 space-y-1 overflow-y-auto">
@@ -47,7 +47,7 @@ export default function AdminLayout({ children, title }) {
       </nav>
       <div className="p-4 border-t border-white/5">
         <div className="flex items-center gap-3 mb-3">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-white text-sm font-bold">
+          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-white text-sm font-semibold">
             {user?.name?.[0] || 'A'}
           </div>
           <div>

@@ -43,7 +43,7 @@ export default function Navbar() {
           <div className="w-9 h-9 rounded-xl overflow-hidden ring-1 ring-indigo-200 group-hover:ring-indigo-400 transition-all duration-300 shadow-md shadow-indigo-100">
             <img src="/logo.png" alt="Devluma" className="w-full h-full object-cover" />
           </div>
-          <span className="font-display font-bold text-xl tracking-tight text-gray-900">
+          <span className="font-display font-semibold text-xl tracking-tight text-gray-900">
             dev<span className="gradient-text">luma</span>
           </span>
         </Link>

@@ -53,7 +53,7 @@ export default function AboutPage() {
                   style={{ background: 'rgba(59,130,246,0.1)', border: '1px solid rgba(59,130,246,0.2)' }}>
                   <Icon size={22} className="text-blue-400" />
                 </div>
-                <h3 className="font-display font-bold text-black text-lg mb-2">{title}</h3>
+                <h3 className="font-display font-semibold text-black text-lg mb-2">{title}</h3>
                 <p className="text-slate-400 text-sm">{desc}</p>
               </motion.div>
             ))}
@@ -74,10 +74,10 @@ export default function AboutPage() {
                 transition={{ delay: i * 0.08 }}
                 className="glass rounded-2xl p-6 card-hover group text-center"
               >
-                <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${gradient} flex items-center justify-center mx-auto mb-4 text-black font-display font-bold text-2xl group-hover:scale-105 transition-transform`}>
+                <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${gradient} flex items-center justify-center mx-auto mb-4 text-black font-display font-semibold text-2xl group-hover:scale-105 transition-transform`}>
                   {name.split(' ').map(n => n[0]).join('')}
                 </div>
-                <h3 className="font-display font-bold text-black text-lg mb-1">{name}</h3>
+                <h3 className="font-display font-semibold text-black text-lg mb-1">{name}</h3>
                 <p className="text-blue-400 font-mono text-xs mb-3">{role}</p>
                 <p className="text-slate-400 text-sm leading-relaxed">{bio}</p>
               </motion.div>

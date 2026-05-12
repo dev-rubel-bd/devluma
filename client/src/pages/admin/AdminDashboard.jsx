@@ -31,7 +31,7 @@ function Sidebar({ open, setOpen }) {
           <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-brand-500 to-accent-500 flex items-center justify-center">
             <Zap className="w-3.5 h-3.5 text-white" />
           </div>
-          <span className="font-bold font-display gradient-text">Devluma</span>
+          <span className="font-semibold font-display gradient-text">Devluma</span>
           <span className="text-xs text-slate-600 ml-1">Admin</span>
         </div>
 
@@ -66,7 +66,7 @@ function StatCard({ label, value, icon: Icon, color }) {
         <Icon className="w-6 h-6 text-white" />
       </div>
       <div>
-        <div className="text-2xl font-bold font-display text-white">{value}</div>
+        <div className="text-2xl font-semibold font-display text-white">{value}</div>
         <div className="text-slate-400 text-sm">{label}</div>
       </div>
     </div>
@@ -86,7 +86,7 @@ function DashboardHome() {
   return (
     <div>
       <div className="mb-8">
-        <h1 className="text-2xl font-bold font-display text-white">Welcome back, {user?.name?.split(" ")[0]} 👋</h1>
+        <h1 className="text-2xl font-semibold font-display text-white">Welcome back, {user?.name?.split(" ")[0]} 👋</h1>
         <p className="text-slate-400 mt-1">Here is what is happening with your agency today.</p>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -104,7 +104,7 @@ function Modal({ title, onClose, children }) {
     <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4">
       <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="bg-dark-700 border border-dark-400 rounded-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto">
         <div className="flex items-center justify-between p-6 border-b border-dark-400">
-          <h2 className="text-white font-bold text-lg">{title}</h2>
+          <h2 className="text-white font-semibold text-lg">{title}</h2>
           <button onClick={onClose} className="text-slate-400 hover:text-white"><X className="w-5 h-5" /></button>
         </div>
         <div className="p-6">{children}</div>
@@ -154,7 +154,7 @@ function ProjectsAdmin() {
   return (
     <div>
       <div className="flex items-center justify-between mb-6">
-        <h1 className="text-xl font-bold text-white">Projects</h1>
+        <h1 className="text-xl font-semibold text-white">Projects</h1>
         <button onClick={openCreate} className="btn-primary text-sm py-2 flex items-center gap-2"><Plus className="w-4 h-4" />Add Project</button>
       </div>
       {loading ? <LoadingSpinner /> : (
@@ -221,7 +221,7 @@ function BlogsAdmin() {
   return (
     <div>
       <div className="flex items-center justify-between mb-6">
-        <h1 className="text-xl font-bold text-white">Blog Posts</h1>
+        <h1 className="text-xl font-semibold text-white">Blog Posts</h1>
         <button onClick={() => { setForm({ title: "", content: "", excerpt: "", image: "", author: "Devluma Team", tags: "", published: true }); setModal("create"); }} className="btn-primary text-sm py-2 flex items-center gap-2"><Plus className="w-4 h-4" />New Post</button>
       </div>
       {loading ? <LoadingSpinner /> : (
@@ -287,14 +287,14 @@ function TestimonialsAdmin() {
   return (
     <div>
       <div className="flex items-center justify-between mb-6">
-        <h1 className="text-xl font-bold text-white">Testimonials</h1>
+        <h1 className="text-xl font-semibold text-white">Testimonials</h1>
         <button onClick={() => { setForm({ name: "", role: "", company: "", review: "", rating: 5 }); setModal("create"); }} className="btn-primary text-sm py-2 flex items-center gap-2"><Plus className="w-4 h-4" />Add</button>
       </div>
       {loading ? <LoadingSpinner /> : (
         <div className="space-y-3">
           {testimonials.map(t => (
             <div key={t._id} className="glass rounded-xl p-4 flex items-start gap-4">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-brand-500 to-accent-500 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">{t.name[0]}</div>
+              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-brand-500 to-accent-500 flex items-center justify-center text-white font-semibold text-sm flex-shrink-0">{t.name[0]}</div>
               <div className="flex-1 min-w-0">
                 <div className="text-white font-medium">{t.name} — {t.role} @ {t.company}</div>
                 <div className="text-slate-400 text-sm mt-1 line-clamp-2">{t.review}</div>
@@ -341,7 +341,7 @@ function MessagesAdmin() {
 
   return (
     <div>
-      <h1 className="text-xl font-bold text-white mb-6">Messages</h1>
+      <h1 className="text-xl font-semibold text-white mb-6">Messages</h1>
       {loading ? <LoadingSpinner /> : (
         <div className="space-y-3">
           {messages.map(m => (
@@ -349,7 +349,7 @@ function MessagesAdmin() {
               <div className="flex items-start justify-between gap-4">
                 <div className="flex-1">
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="w-8 h-8 rounded-full bg-gradient-to-br from-brand-500 to-accent-500 flex items-center justify-center text-white text-xs font-bold">{m.name[0]}</div>
+                    <div className="w-8 h-8 rounded-full bg-gradient-to-br from-brand-500 to-accent-500 flex items-center justify-center text-white text-xs font-semibold">{m.name[0]}</div>
                     <div>
                       <span className="text-white font-medium text-sm">{m.name}</span>
                       <span className="text-slate-500 text-xs ml-2">{m.email}</span>

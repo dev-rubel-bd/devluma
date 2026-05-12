@@ -11,7 +11,7 @@ export default function Footer() {
               <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-500 to-accent-500 flex items-center justify-center">
                 <Zap className="w-4 h-4 text-white" />
               </div>
-              <span className="text-xl font-bold font-display gradient-text">Devluma</span>
+              <span className="text-xl font-semibold font-display gradient-text">Devluma</span>
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
               We craft digital experiences that captivate, convert, and endure. Your vision, our expertise.

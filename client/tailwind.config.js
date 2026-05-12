@@ -3,9 +3,9 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
-       ffontFamily: {
-  display: ['"Plus Jakarta Sans"', 'sans-serif'],
-  body:    ['"Plus Jakarta Sans"', 'sans-serif'],
+     fontFamily: {
+  display: ['"Outfit"', 'sans-serif'],
+  body:    ['"Outfit"', 'sans-serif'],
   mono:    ['"JetBrains Mono"', 'monospace'],
 },
       colors: {
@@ -30,11 +30,16 @@ module.exports = {
         },
       },
       animation: {
-        'glow-pulse':      'glowPulse 3s ease-in-out infinite',
+         'glow-pulse':      'glowPulse 3s ease-in-out infinite',
         'float':           'float 6s ease-in-out infinite',
         'gradient-shift':  'gradientShift 8s ease infinite',
-      },
+       'marquee':         'marquee 20s linear infinite',
+      },      
       keyframes: {
+          marquee: {
+                '0%':   { transform: 'translateX(0%)' },
+                '100%': { transform: 'translateX(-50%)' },
+              },              
         glowPulse: {
           '0%, 100%': { boxShadow: '0 0 20px rgba(30,27,114,0.3)' },
           '50%':      { boxShadow: '0 0 50px rgba(79,70,229,0.45)' },

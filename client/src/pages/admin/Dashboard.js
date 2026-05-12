@@ -39,7 +39,7 @@ export default function Dashboard() {
   return (
     <AdminLayout title="Dashboard">
       <motion.div variants={fadeUp} initial="hidden" animate="visible" className="mb-8">
-        <h2 className="text-2xl font-display font-bold text-white">Welcome back 👋</h2>
+        <h2 className="text-2xl font-display font-semibold text-white">Welcome back 👋</h2>
         <p className="text-white mt-1">Here's an overview of your Devluma content.</p>
       </motion.div>
 
@@ -59,7 +59,7 @@ export default function Dashboard() {
               {loading ? (
                 <div className="h-8 w-16 bg-white/10 rounded animate-pulse mb-1" />
               ) : (
-                <div className="text-3xl font-display font-bold text-black">{value}</div>
+                <div className="text-3xl font-display font-semibold text-black">{value}</div>
               )}
               <div className="text-black text-sm mt-0.5 flex items-center gap-1 group-hover:text-blue-600 transition-colors">
                 {label} <FiArrowRight size={12} />

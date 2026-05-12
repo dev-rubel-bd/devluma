@@ -72,7 +72,7 @@ export default function Services() {
                     <Icon className="w-7 h-7 text-white" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-bold text-white mb-2">{title}</h3>
+                    <h3 className="text-xl font-semibold text-white mb-2">{title}</h3>
                     <p className="text-slate-400 text-sm leading-relaxed mb-5">{desc}</p>
                     <ul className="space-y-2">
                       {features.map(f => (

@@ -81,7 +81,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold font-display leading-[1.05] mb-6"
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-medium font-display leading-[1.05] mb-6"
           >
             We Build{" "}
             <span className="gradient-text glow-text">Digital</span>
@@ -122,7 +122,7 @@ export default function Home() {
           >
             {stats.map(({ value, label }) => (
               <div key={label} className="glass rounded-2xl p-6 text-center">
-                <div className="text-3xl font-bold font-display gradient-text">{value}</div>
+                <div className="text-3xl font-semibold font-display gradient-text">{value}</div>
                 <div className="text-sm text-slate-400 mt-1">{label}</div>
               </div>
             ))}
@@ -153,7 +153,7 @@ export default function Home() {
                 <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${color} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform`}>
                   <Icon className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2">{title}</h3>
+                <h3 className="text-lg font-semibold text-white mb-2">{title}</h3>
                 <p className="text-slate-400 text-sm leading-relaxed">{desc}</p>
               </motion.div>
             ))}
@@ -178,7 +178,7 @@ export default function Home() {
                     <span className="absolute top-3 right-3 px-3 py-1 text-xs font-medium rounded-full bg-brand-500/80 text-white">{project.category}</span>
                   </div>
                   <div className="p-5">
-                    <h3 className="text-white font-bold mb-2">{project.title}</h3>
+                    <h3 className="text-white font-semibold mb-2">{project.title}</h3>
                     <p className="text-slate-400 text-sm leading-relaxed line-clamp-2">{project.description}</p>
                     <div className="flex flex-wrap gap-2 mt-4">
                       {project.tags?.slice(0, 3).map(tag => (
@@ -214,7 +214,7 @@ export default function Home() {
                   </div>
                   <p className="text-slate-300 text-sm leading-relaxed mb-6 italic">"{t.review}"</p>
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-brand-500 to-accent-500 flex items-center justify-center text-white font-bold text-sm">
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-brand-500 to-accent-500 flex items-center justify-center text-white font-semibold text-sm">
                       {t.name[0]}
                     </div>
                     <div>

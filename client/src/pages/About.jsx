@@ -33,7 +33,7 @@ function TeamAvatar({ name, initials, image }) {
   }
 
   return (
-    <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-brand-500 to-accent-500 flex items-center justify-center mx-auto mb-5 text-2xl font-bold text-white group-hover:scale-110 transition-transform">
+    <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-brand-500 to-accent-500 flex items-center justify-center mx-auto mb-5 text-2xl font-semibold text-white group-hover:scale-110 transition-transform">
       {initials}
     </div>
   );
@@ -55,7 +55,7 @@ export default function About() {
               Our Story
             </motion.span>
             <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
-              className="text-5xl md:text-6xl font-bold font-display text-white mb-6 leading-tight"
+              className="text-5xl md:text-6xl font-semibold font-display text-white mb-6 leading-tight"
             >
               Built for the <span className="gradient-text">Ambitious</span>
             </motion.h1>
@@ -76,7 +76,7 @@ export default function About() {
                 <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-600 to-accent-600 flex items-center justify-center mx-auto mb-5">
                   <Icon className="w-7 h-7 text-white" />
                 </div>
-                <h3 className="text-white font-bold text-lg mb-2">{title}</h3>
+                <h3 className="text-white font-semibold text-lg mb-2">{title}</h3>
                 <p className="text-slate-400 text-sm leading-relaxed">{desc}</p>
               </motion.div>
             ))}
@@ -90,7 +90,7 @@ export default function About() {
                 className="card text-center group"
               >
                 <TeamAvatar name={name} initials={initials} image={image} />
-                <h3 className="text-white font-bold text-lg mb-1">{name}</h3>
+                <h3 className="text-white font-semibold text-lg mb-1">{name}</h3>
                 <p className="text-brand-400 text-sm font-medium mb-3">{role}</p>
                 <p className="text-slate-400 text-sm leading-relaxed">{bio}</p>
               </motion.div>

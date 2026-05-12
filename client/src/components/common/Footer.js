@@ -43,7 +43,7 @@ export default function Footer() {
               <div className="w-9 h-9 rounded-xl overflow-hidden ring-2 ring-indigo-200 group-hover:ring-indigo-400 transition-all shadow-sm">
                 <img src="/logo.png" alt="Devluma" className="w-full h-full object-cover" />
               </div>
-              <span className="font-display font-bold text-xl text-gray-900">
+              <span className="font-display font-semibold text-xl text-gray-900">
                 dev<span className="gradient-text">luma</span>
               </span>
             </Link>

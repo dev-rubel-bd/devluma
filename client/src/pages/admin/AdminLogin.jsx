@@ -43,7 +43,7 @@ export default function AdminLogin() {
             </div>
             <div className="flex items-center justify-center gap-2 mb-2">
               <Zap className="w-5 h-5 text-brand-400" />
-              <span className="text-lg font-bold font-display gradient-text">Devluma Admin</span>
+              <span className="text-lg font-semibold font-display gradient-text">Devluma Admin</span>
             </div>
             <p className="text-slate-400 text-sm">Sign in to manage your agency dashboard</p>
           </div>

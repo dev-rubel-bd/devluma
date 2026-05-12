@@ -32,7 +32,7 @@ function TeamCard({ name, role, gradient, image, i }) {
             className="w-full h-full object-cover object-top"
           />
         ) : (
-          <div className={`w-full h-full bg-gradient-to-br ${gradient} flex items-center justify-center text-white font-bold text-2xl font-display`}>
+          <div className={`w-full h-full bg-gradient-to-br ${gradient} flex items-center justify-center text-white font-semibold text-2xl font-display`}>
             {name[0]}
           </div>
         )}

@@ -42,7 +42,7 @@ export default function AdminLogin() {
             style={{ background: 'linear-gradient(135deg, #3b82f6, #7c3aed)' }}>
             <span className="font-display font-black text-white text-2xl">D</span>
           </div>
-          <h1 className="font-display font-bold text-2xl text-white mb-1">Admin Portal</h1>
+          <h1 className="font-display font-semibold text-2xl text-white mb-1">Admin Portal</h1>
           <p className="text-slate-500 text-sm">Sign in to manage Devluma content</p>
         </div>
 

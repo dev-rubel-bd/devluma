@@ -92,7 +92,7 @@ export default function PortfolioPage() {
                       </div>
                       <div className="p-6">
                         {project.client && <div className="text-blue-400 font-mono text-xs mb-2">{project.client}</div>}
-                        <h3 className="font-display font-bold text-white text-xl mb-3 group-hover:text-blue-300 transition-colors">{project.title}</h3>
+                        <h3 className="font-display font-semibold text-white text-xl mb-3 group-hover:text-blue-300 transition-colors">{project.title}</h3>
                         <p className="text-slate-400 text-sm leading-relaxed mb-4">{project.description}</p>
                         <div className="flex flex-wrap gap-2">
                           {project.tags?.slice(0, 4).map(tag => (

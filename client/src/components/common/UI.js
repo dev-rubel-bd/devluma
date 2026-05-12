@@ -102,7 +102,7 @@ export function Modal({ isOpen, onClose, title, children }) {
         style={{ zIndex: 10 }}
       >
         <div className="flex items-center justify-between p-6 border-b" style={{ borderColor: 'var(--border-color)' }}>
-          <h3 className="font-display font-bold text-xl text-white">{title}</h3>
+          <h3 className="font-display font-semibold text-xl text-white">{title}</h3>
           <button onClick={onClose}
             className="w-8 h-8 rounded-lg flex items-center justify-center text-black hover:text-blue-600 hover:bg-white/5 transition-colors">
             ✕

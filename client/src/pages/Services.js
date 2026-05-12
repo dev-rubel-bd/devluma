@@ -79,7 +79,7 @@ export default function Services() {
                 <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${color} flex items-center justify-center mb-6`}>
                   <Icon size={26} className="text-white" />
                 </div>
-                <h2 className="font-display font-bold text-black text-2xl mb-4">{title}</h2>
+                <h2 className="font-display font-semibold text-black text-2xl mb-4">{title}</h2>
                 <p className="text-slate-400 leading-relaxed mb-6">{desc}</p>
                 <div className="text-sm font-mono text-purple-400 mb-4">{price}</div>
                 <Link to="/contact" className="btn-primary text-sm">

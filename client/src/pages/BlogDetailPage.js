@@ -58,7 +58,7 @@ export default function BlogDetailPage() {
             <h1 className="heading-lg text-white mb-6">{blog.title}</h1>
 
             <div className="flex items-center gap-3 mb-8 pb-8" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-              <div className="w-10 h-10 rounded-full flex items-center justify-center font-bold text-white text-sm"
+              <div className="w-10 h-10 rounded-full flex items-center justify-center font-semibold text-white text-sm"
                 style={{ background: 'linear-gradient(135deg, #3b82f6, #7c3aed)' }}>
                 {blog.author?.name?.[0] || 'D'}
               </div>

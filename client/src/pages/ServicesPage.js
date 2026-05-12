@@ -98,7 +98,7 @@ export default function ServicesPage() {
                   <Icon size={26} style={{ color }} />
                 </div>
                 <p className="font-mono text-xs mb-2" style={{ color }}>{tagline}</p>
-                <h3 className="font-display font-bold text-white text-xl mb-3 group-hover:text-blue-300 transition-colors">{title}</h3>
+                <h3 className="font-display font-semibold text-white text-xl mb-3 group-hover:text-blue-300 transition-colors">{title}</h3>
                 <p className="text-slate-400 text-sm leading-relaxed mb-6">{description}</p>
                 <ul className="space-y-2">
                   {features.map(f => (

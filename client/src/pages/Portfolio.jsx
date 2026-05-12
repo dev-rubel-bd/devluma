@@ -80,7 +80,7 @@ export default function Portfolio() {
                       <span className="absolute top-3 right-3 px-3 py-1 text-xs font-medium rounded-full bg-brand-500/80 text-white">{project.category}</span>
                     </div>
                     <div className="p-5">
-                      <h3 className="text-white font-bold text-lg mb-2">{project.title}</h3>
+                      <h3 className="text-white font-semibold text-lg mb-2">{project.title}</h3>
                       <p className="text-slate-400 text-sm leading-relaxed">{project.description}</p>
                       <div className="flex flex-wrap gap-2 mt-4">
                         {project.tags?.slice(0, 4).map(tag => (

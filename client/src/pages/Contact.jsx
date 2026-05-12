@@ -58,7 +58,7 @@ export default function Contact() {
               ))}
 
               <div className="glass rounded-2xl p-6">
-                <h3 className="text-white font-bold mb-3">Response Time</h3>
+                <h3 className="text-white font-semibold mb-3">Response Time</h3>
                 <p className="text-slate-400 text-sm leading-relaxed">We typically respond within 2-4 hours during business hours (Mon-Fri, 9am-6pm PST).</p>
                 <div className="mt-4 flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />

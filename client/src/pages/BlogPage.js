@@ -72,7 +72,7 @@ export default function BlogPage() {
                       <span className="flex items-center gap-1"><FiClock size={12} /> {blog.readTime} min read</span>
                       <span className="flex items-center gap-1"><FiEye size={12} /> {blog.views} views</span>
                     </div>
-                    <h3 className="font-display font-bold text-white text-lg mb-3 leading-snug group-hover:text-blue-300 transition-colors line-clamp-2">
+                    <h3 className="font-display font-semibold text-white text-lg mb-3 leading-snug group-hover:text-blue-300 transition-colors line-clamp-2">
                       {blog.title}
                     </h3>
                     <p className="text-slate-400 text-sm leading-relaxed mb-4 line-clamp-3">{blog.excerpt}</p>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
@@ -27,12 +27,54 @@ const services = [
   
 ];
 
+// Animated section
+
+function useCountUp(target, duration = 2000, start = false) {
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    if (!start) return;
+    let startTime = null;
+    const step = (timestamp) => {
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      setCount(Math.floor(progress * target));
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }, [start, target, duration]);
+  return count;
+}
+
+function StatCard({ value, suffix, label }) {
+  const ref = useRef(null);
+  const [started, setStarted] = useState(false);
+  const count = useCountUp(value, 2000, started);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setStarted(true); },
+      { threshold: 0.5 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+  return (
+    <motion.div ref={ref} whileHover={{ scale: 1.05 }}
+      className="bg-white border border-indigo-100 rounded-2xl p-4 text-center shadow-sm shadow-indigo-50"
+    >
+      <div className="gradient-text font-display font-bold text-3xl">{count}{suffix}</div>
+      <div className="text-gray-400 text-xs mt-1">{label}</div>
+    </motion.div>
+  );
+}
+
 const stats = [
-  { value: '100+', label: 'Projects Shipped' },
-  { value: '98%',  label: 'Client Satisfaction' },
-  { value: '5+',   label: 'Years Experience' },
-  { value: '10+',  label: 'Team Members' },
+  { value: 100, suffix: '+', label: 'Projects Shipped' },
+  { value: 98,  suffix: '%', label: 'Client Satisfaction' },
+  { value: 5,   suffix: '+', label: 'Years Experience' },
+  { value: 10,  suffix: '+', label: 'Team Members' },
 ];
+
+//...........................................
 
 const features = [
   { icon: FiZap,    title: 'Lightning Fast',   desc: 'Optimized for speed and performance from day one.' },
@@ -54,7 +96,7 @@ export default function Home() {
       <SEO title="Digital Agency" description="Devluma — We build digital experiences that shine." />
 
       {/* ── HERO ── */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-white grid-bg">
+        <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-white grid-bg max-w-full">
         {/* Soft ambient blobs */}
         <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-indigo-100/60 rounded-full blur-[130px] pointer-events-none" />
         <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-indigo-50/80 rounded-full blur-[120px] pointer-events-none" />
@@ -70,17 +112,92 @@ export default function Home() {
             </div>
           </motion.div>
 
-          {/* Pill */}
-          <motion.div variants={fadeUp} initial="hidden" animate="visible" custom={1}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-50 border border-indigo-200 text-sm text-indigo-600 font-medium mb-6"
-          >
-            <span className="w-2 h-2 rounded-full bg-green-700 animate-pulse" />
-            Crafting the future of digital — since 2021
-          </motion.div>
+          {/* Marquee */}
+           <div className="relative overflow-hidden w-full mb-8" style={{maxWidth: '100vw'}}>
+             <div className="flex animate-marquee gap-6 md:gap-10" style={{width: 'max-content'}}>
+                {[
+                  'React', 'Node.js', 'MongoDB', 'Figma', 'Php', 'MySql', 'Python', 'Flutter',
+                  'Next.js', 'TypeScript', 'Tailwind CSS', 'AWS', 'Buffer', 'Canva', 'GraphQL',
+                  'React', 'Node.js', 'MongoDB', 'Figma', 'Flutter',
+                  'Next.js', 'TypeScript', 'Tailwind CSS', 'AWS', 'GraphQL',
+                ].map((tech, i) => (
+               <span key={i} className="inline-flex items-center gap-2 text-indigo-500 text-xs md:text-sm font-medium shrink-0">
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-300 inline-block shrink-0" />
+                  {tech}
+                </span>
+                ))}
+              </div>
+            </div>
+
+
+
+            {/* Avatars with review */}
+<motion.div variants={fadeUp} initial="hidden" animate="visible" custom={1}
+  className="flex flex-col items-center gap-3 mb-8"
+>
+  {/* Stacked Avatars */}
+  <div className="flex items-center">
+    {[
+      'https://api.dicebear.com/7.x/avataaars/svg?seed=Felix',
+      'https://api.dicebear.com/7.x/avataaars/svg?seed=Aneka',
+      'https://api.dicebear.com/7.x/avataaars/svg?seed=Mia',
+      'https://api.dicebear.com/7.x/avataaars/svg?seed=John',
+      'https://api.dicebear.com/7.x/avataaars/svg?seed=Sara',
+    ].map((src, i) => (
+      <motion.div
+        key={i}
+        initial={{ opacity: 0, x: -10 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: i * 0.15, duration: 0.4 }}
+        style={{ marginLeft: i === 0 ? 0 : '-12px', zIndex: i }}
+        className="w-10 h-10 rounded-full border-2 border-white shadow-md overflow-hidden bg-indigo-100"
+      >
+        <img src={src} alt={`client-${i}`} className="w-full h-full object-cover" />
+      </motion.div>
+    ))}
+
+    {/* +50 badge */}
+    <motion.div
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ delay: 0.8, duration: 0.4 }}
+      style={{ marginLeft: '-12px', zIndex: 5 }}
+      className="w-10 h-10 rounded-full border-2 border-white bg-indigo-600 flex items-center justify-center text-white text-xs font-bold shadow-md"
+    >
+      +45
+    </motion.div>
+  </div>
+
+  {/* Stars & Text */}
+  <motion.div
+    initial={{ opacity: 0, y: 10 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ delay: 1, duration: 0.5 }}
+    className="flex flex-col items-center gap-1"
+  >
+    <div className="flex items-center gap-1">
+      {[...Array(5)].map((_, i) => (
+        <motion.svg
+          key={i}
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 1 + i * 0.1 }}
+          className="w-4 h-4 text-yellow-700 fill-yellow-500"
+          viewBox="0 0 20 20"
+        >
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </motion.svg>
+      ))}
+    </div>
+    <p className="text-gray-500 text-sm">
+      Trusted by <span className="text-indigo-600 font-semibold">50+ clients</span> worldwide
+    </p>
+  </motion.div>
+</motion.div>
 
           {/* Headline */}
           <motion.h1 variants={fadeUp} initial="hidden" animate="visible" custom={2}
-            className="section-title text-gray-900 mb-10 mt-5 max-w-3xl mx-auto"
+            className="section-title text-gray-900 mb-10 mt-5 max-w-3xl mx-auto font-semibold font-display "
           >
             We Build Digital{' '}
             <span className="gradient-text">Experiences</span>
@@ -116,14 +233,9 @@ export default function Home() {
           <motion.div variants={fadeUp} initial="hidden" animate="visible" custom={6}
             className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto mt-20"
           >
-            {stats.map(({ value, label }, i) => (
-              <motion.div key={i} whileHover={{ scale: 1.05 }}
-                className="bg-white border border-indigo-100 rounded-2xl p-4 text-center shadow-sm shadow-indigo-50"
-              >
-                <div className="gradient-text font-display font-bold text-3xl">{value}</div>
-                <div className="text-gray-400 text-xs mt-1">{label}</div>
-              </motion.div>
-            ))}
+            {stats.map(({ value, suffix, label }, i) => (
+  <StatCard key={i} value={value} suffix={suffix} label={label} />
+))}
           </motion.div>
         </div>
       </section>
@@ -248,7 +360,7 @@ export default function Home() {
                   {image ? (
                     <img src={image} alt={name} className="w-full h-full object-cover" />
                       ) : (
-                 <div className={`w-full h-full bg-gradient-to-br ${gradient} flex items-center justify-center text-white font-bold text-2xl font-display`}>
+                 <div className={`w-full h-full bg-gradient-to-br ${gradient} flex items-center justify-center text-white font-semibold text-2xl font-display`}>
                  {name[0]}
                  </div>
                      )}
@@ -324,7 +436,7 @@ export default function Home() {
                   </div>
                   <p className="text-gray-600 text-sm leading-relaxed mb-6">"{t.review}"</p>
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#1e1b72] to-[#6366f1] flex items-center justify-center text-white font-bold text-sm">
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#1e1b72] to-[#6366f1] flex items-center justify-center text-white font-semibold text-sm">
                       {t.name[0]}
                     </div>
                     <div>

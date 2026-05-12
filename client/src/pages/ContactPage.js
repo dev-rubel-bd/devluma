@@ -70,7 +70,7 @@ export default function ContactPage() {
               {/* Response time card */}
               <div className="glass rounded-2xl p-6"
                 style={{ background: 'linear-gradient(135deg, rgba(59,130,246,0.08), rgba(139,92,246,0.08))' }}>
-                <div className="text-black font-display font-bold text-lg mb-2">⚡ Fast Response</div>
+                <div className="text-black font-display font-semibold text-lg mb-2">⚡ Fast Response</div>
                 <p className="text-slate-400 text-sm">We typically respond within 2-4 hours during business hours. For urgent projects, we're available 24/7.</p>
               </div>
             </motion.div>
@@ -80,7 +80,7 @@ export default function ContactPage() {
               {submitted ? (
                 <div className="glass rounded-2xl p-12 text-center h-full flex flex-col items-center justify-center">
                   <div className="text-6xl mb-4">🚀</div>
-                  <h3 className="font-display font-bold text-black text-2xl mb-3">Message Sent!</h3>
+                  <h3 className="font-display font-semibold text-black text-2xl mb-3">Message Sent!</h3>
                   <p className="text-slate-400 mb-6">Thanks for reaching out. We'll get back to you shortly.</p>
                   <button onClick={() => setSubmitted(false)} className="btn-outline text-sm">Send Another Message</button>
                 </div>

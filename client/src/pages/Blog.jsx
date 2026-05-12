@@ -53,7 +53,7 @@ export default function Blog() {
                         </span>
                       ))}
                     </div>
-                    <h2 className="text-white font-bold text-lg mb-3 leading-snug group-hover:text-brand-400 transition-colors">{blog.title}</h2>
+                    <h2 className="text-white font-semibold text-lg mb-3 leading-snug group-hover:text-brand-400 transition-colors">{blog.title}</h2>
                     <p className="text-slate-400 text-sm leading-relaxed mb-5 line-clamp-3">{blog.excerpt || blog.content.slice(0, 120) + "..."}</p>
                     <div className="flex items-center gap-4 text-xs text-slate-500 border-t border-dark-400 pt-4">
                       <span className="flex items-center gap-1"><User className="w-3 h-3" />{blog.author}</span>
