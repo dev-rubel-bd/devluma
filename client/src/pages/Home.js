@@ -19,11 +19,11 @@ const fadeUp = {
 };
 
 const services = [
-  { icon: FiCode,       title: 'Web Development',  desc: 'Blazing-fast, pixel-perfect websites built with modern frameworks.', color: 'from-[#1e1b72] to-[#4f46e5]' },
+  { icon: FiCode,       title: 'Web Development',  desc: 'Blazing-fast, pixel-perfect websites built with modern frameworks.', color: 'from-[#065f46] to-[#10b981]' },
   { icon: FiSmartphone, title: 'App Development',   desc: 'Native & cross-platform apps users love, on every device.',          color: 'from-[#312e81] to-[#6366f1]' },
   { icon: FiLayout,     title: 'UI/UX Design',      desc: 'Beautiful, intuitive designs that delight users and drive conversions.', color: 'from-[#be185d] to-[#f43f5e]' },
-  { icon: FiTrendingUp, title: 'Digital Marketing', desc: 'Data-driven campaigns that convert visitors into loyal customers.',   color: 'from-[#1e1b72] to-[#4338ca]' },
-  { icon: FiSearch,     title: 'SEO Optimization',  desc: 'Technical SEO that drives real, sustainable organic growth.',        color: 'from-[#2d2a9e] to-[#818cf8]' },
+  { icon: FiTrendingUp, title: 'Digital Marketing', desc: 'Data-driven campaigns that convert visitors into loyal customers.',   color: 'from-[#92400e] to-[#fbbf24]' },
+  { icon: FiSearch,     title: 'SEO Optimization',  desc: 'Technical SEO that drives real, sustainable organic growth.',        color: 'from-[#0e7490] to-[#22d3ee]' },
   
 ];
 
